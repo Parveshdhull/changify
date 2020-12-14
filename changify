@@ -1,0 +1,35 @@
+#!/bin/sh
+
+mkdir -p ~/.config/spotify/Accounts
+
+echo '### Change Spotify Account ###'
+echo 'List All Saved Accounts - l'
+echo 'Load Saved Account - a'
+echo 'Save Current Logged In Account - s'
+echo 'Delete Saved Account - d'
+
+show_options(){
+	echo -e "\nChoose option"
+	read option
+
+	if [ $option = "l" ]; then
+		echo -e "\nSave Accounts"
+	 	ls ~/.config/spotify/Accounts
+	 	show_options
+	 elif [ $option = "a" ]; then
+	 	echo "Enter Account Name"
+		read account
+	 	cp ~/.config/spotify/Accounts/$account ~/.config/spotify/prefs
+	elif [ $option = "s" ]; then
+		echo "Enter Account Name"
+		read account
+		cp ~/.config/spotify/prefs ~/.config/spotify/Accounts/$account
+	elif [ $option = "d" ]; then
+		echo "Enter Account Name"
+		read account
+		rm ~/.config/spotify/Accounts/$account
+	fi
+}
+
+show_options
+echo "Done"
