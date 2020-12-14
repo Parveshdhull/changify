@@ -13,7 +13,7 @@ show_options(){
 	read option
 
 	if [ $option = "l" ]; then
-		echo -e "\nSave Accounts"
+		echo -e "\n<---Saved Accounts--->"
 	 	ls ~/.config/spotify/Accounts
 	 	show_options
 	 elif [ $option = "a" ]; then
