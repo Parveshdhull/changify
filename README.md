@@ -4,6 +4,7 @@ This is simple script which allows you to use multiple spotify accounts on Linux
 
 ## Prequisties
 -> While logging in select remember me.
+
 -> While saving account, choose file name without spaces
 
 ## Usage
