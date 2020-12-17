@@ -28,6 +28,9 @@ show_options(){
 		echo "Enter Account Name"
 		read account
 		rm ~/.config/spotify/Accounts/$account
+	else
+		echo -e "\n[ERROR] - Wrong Option"
+		show_options
 	fi
 }
 
